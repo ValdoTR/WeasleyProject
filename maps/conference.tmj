@@ -1,6 +1,12 @@
 { "compressionlevel":-1,
  "height":14,
  "infinite":false,
+ "properties":[
+   {
+    "name":"script",
+    "type":"string",
+    "value":"script.js"
+   }],
  "layers":[
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
