@@ -4,23 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.ts',
+    entry: './src/main.ts',
     devtool: 'inline-source-map',
     devServer: {
-        // The test webserver serves static files from the root directory.
-        // It comes with CORS enabled (important for WorkAdventure to be able to load the map)
-        static: {
-            directory: ".",
-            serveIndex: true,
-            watch: true,
-        },
-        host: 'localhost',
-        allowedHosts: "all",
+        host: "localhost",
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-        }
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+        },
+        open: "/",
     },
     module: {
         rules: [
