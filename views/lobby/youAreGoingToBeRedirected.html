@@ -11,26 +11,10 @@
     
 
     <script src="https://play.workadventu.re/iframe_api.js"></script>
-    <script lang="ts">
-      window.addEventListener("DOMContentLoaded", () => {
-        WA.onInit().then(async () => {
-            const utils = await import('data:application/javascript;base64,ZXhwb3J0ICogYXMgbWFpbiBmcm9tICcuL21haW4uanMnCmV4cG9ydCAqIGFzIHRyYW5zbGF0aW9ucyBmcm9tICcuL3RyYW5zbGF0ZS5qcycKZXhwb3J0ICogYXMgbGF5ZXJzIGZyb20gJy4vbGF5ZXJzLmpzJwpleHBvcnQgKiBhcyBjaGF0IGZyb20gJy4vY2hhdC5qcyc=')
-
-            const redirectionButton = document.getElementById('redirectionButton')
-            const explanation = document.getElementById('explanation')
-
-            explanation.innerHTML = utils.translations.translate('modules.lobby.youAreGoingToBeRedirected')
-
-            redirectionButton.innerText = utils.translations.translate('modules.lobby.letSGo')
-            redirectionButton.addEventListener("click", () => {
-              // Go to page instead of go to room
-              // --> The lobby can be used for many rooms
-              // --> Pass the right url to this view --> variable ? link in get url ?
-              WA.nav.goToPage('https://workadventu.re/map-building/entry-exit.md') // TODO : true url
-            })
-        })
-      })
-    </script>
+    
+  <script type="module" crossorigin src="../../assets/main-7e3037a0.js"></script>
+  <script type="module" crossorigin src="../../assets/translate-ea8f1c55.js"></script>
+  <script type="module" crossorigin src="../../assets/youAreGoingToBeRedirectedTS-0bbf869a.js"></script>
   <link rel="stylesheet" href="../../assets/main-461c278e.css">
 </head>
     <body>
