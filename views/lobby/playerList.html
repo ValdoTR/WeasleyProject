@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Players list</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <meta name="title" content="Players list">
+
+        
+
+        <style>
+            .player-line {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+                border-bottom: 1px black solid;
+            }
+
+            .player-line img {
+                padding: 10px;
+                border: 1px black solid;
+            }
+        </style>
+
+        <script src="https://play.workadventu.re/iframe_api.js"></script>
+        <script lang="ts">
+          window.addEventListener("DOMContentLoaded", () => {
+            WA.onInit().then(async () => {
+              const { generatePlayersListButtons, closePlayersListWebsite } = await import('data:video/mp2t;base64,Ly8vIDxyZWZlcmVuY2UgdHlwZXM9Ii4uLy4uL25vZGVfbW9kdWxlcy9Ad29ya2FkdmVudHVyZS9pZnJhbWUtYXBpLXR5cGluZ3MiIC8+CmltcG9ydCAqIGFzIG1vZHVsZXMgZnJvbSAnLi4vLi4vc3JjL21vZHVsZXMvaW5kZXguanMnCmltcG9ydCAqIGFzIHV0aWxzIGZyb20gJy4uLy4uL3NyYy91dGlscy9pbmRleC5qcycKaW1wb3J0IHtSZW1vdGVQbGF5ZXJJbnRlcmZhY2V9IGZyb20gIkB3b3JrYWR2ZW50dXJlL2lmcmFtZS1hcGktdHlwaW5ncy9mcm9udC9BcGkvSWZyYW1lL1BsYXllcnMvUmVtb3RlUGxheWVyIjsKCi8vIEdlbmVyYXRlIHBsYXllcnMgbGlzdApjb25zdCBnZW5lcmF0ZVBsYXllcnNMaXN0QnV0dG9ucyA9IGFzeW5jIChlbGVtZW50OiBIVE1MRWxlbWVudCkgPT4gewogICAgLy8gdXNlciBpcyBub3QgYXV0aGVudGljYXRlZAogICAgaWYgKCFXQS5wbGF5ZXIuaXNMb2dnZWQpIHsKICAgICAgY29uc3QgZGl2ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2JykKICAgICAgZGl2LmlubmVyVGV4dCA9IHV0aWxzLnRyYW5zbGF0aW9ucy50cmFuc2xhdGUoJ21vZHVsZXMubG9iYnkuY29ubmVjdFRvSW52aXRlJykKICAgICAgZGl2LmNsYXNzTGlzdC5hZGQoJ2FsZXJ0JykKICAgICAgZGl2LmNsYXNzTGlzdC5hZGQoJ2Vycm9yJykKICAgICAgZGl2LmNsYXNzTGlzdC5hZGQoJ21iLTInKQogICAgICBlbGVtZW50LnByZXBlbmQoZGl2KQogICAgfQoKICAgIC8vIHNldCBwbGF5ZXIgbGlzdAogICAgY29uc3QgcGxheWVycyA9IGF3YWl0IG1vZHVsZXMubG9iYnkuZ2V0UGxheWVyc0xpc3QoKQoKICAgIGZvciAobGV0IHBsYXllciBvZiBwbGF5ZXJzKSB7CiAgICAgIGVsZW1lbnQuYXBwZW5kQ2hpbGQoZ2V0UGxheWVyQnV0dG9uKHBsYXllcikpCiAgICB9Cn0KCi8vIE9uZSBpdGVtIGluIHBsYXllcnMgbGlzdApjb25zdCBnZXRQbGF5ZXJCdXR0b24gPSAocGxheWVyOiBSZW1vdGVQbGF5ZXJJbnRlcmZhY2UpID0+IHsKICBsZXQgY2hpbGQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKQogIGNoaWxkLmNsYXNzTGlzdC5hZGQoJ3BsYXllci1saW5lJykKCiAgbGV0IGltYWdlID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaW1nJykKICBpbWFnZS5zZXRBdHRyaWJ1dGUoJ3NyYycsIHBsYXllci5zdGF0ZS5wbGF5ZXJJbWFnZSBhcyBzdHJpbmcpCgogIGxldCBuYW1lID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpCiAgbmFtZS5pbm5lclRleHQgPSBwbGF5ZXIubmFtZQoKICBsZXQgYnV0dG9uOkhUTUxFbGVtZW50CgogIC8vIFVzZXIgY2Fubm90IGludml0ZSB1bkF1dGhlbnRpY2F0ZWQgdXNlcnMKICBpZiAocGxheWVyLnN0YXRlLmlzQXV0aGVudGljYXRlZCkgewogICAgYnV0dG9uID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYnV0dG9uJykKICAgIGJ1dHRvbi5pbm5lclRleHQgPSB1dGlscy50cmFuc2xhdGlvbnMudHJhbnNsYXRlKCdtb2R1bGVzLmxvYmJ5Lmludml0ZScpCiAgICBidXR0b24uY2xhc3NMaXN0LmFkZCgnYnRuJykKICAgIGJ1dHRvbi5jbGFzc0xpc3QuYWRkKCdiZy1pbmZvJykKCiAgICAvLyBDYW5ub3QgaW52aXRlIHBsYXllcnMgaWYgaXMgbm90IGF1dGhlbnRpY2F0ZWQKICAgIGlmICghV0EucGxheWVyLmlzTG9nZ2VkKSB7CiAgICAgIGJ1dHRvbi5jbGFzc0xpc3QuYWRkKCdiZy1lcnJvcicpCiAgICAgIGJ1dHRvbi5zZXRBdHRyaWJ1dGUoJ2Rpc2FibGVkJywgJzEnKQogICAgfSBlbHNlIHsKICAgICAgYnV0dG9uLmNsYXNzTGlzdC5hZGQoJ2JnLWluZm8nKQogICAgfQogIH0gZWxzZSB7CiAgICBidXR0b24gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKQogICAgYnV0dG9uLmlubmVyVGV4dCA9IHV0aWxzLnRyYW5zbGF0aW9ucy50cmFuc2xhdGUoJ21vZHVsZXMubG9iYnkubm90QXV0aGVudGljYXRlZCcpCiAgICBidXR0b24uY2xhc3NMaXN0LmFkZCgnZXJyb3InKQogIH0KCiAgYnV0dG9uLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgKCkgPT4gewogICAgY29uc29sZS5sb2coIlRlbnRhdGl2ZSBkJ2ludml0ZXIgIiArIHBsYXllci5uYW1lICsgJyA6ICcgKyBwbGF5ZXIucGxheWVySWQpCiAgICBpZiAobW9kdWxlcy5sb2JieS5jYW5JbnZpdGVQTGF5ZXIocGxheWVyKSkgewogICAgICBtb2R1bGVzLmxvYmJ5Lmludml0ZVBsYXllcihwbGF5ZXIpCiAgICB9IGVsc2UgewogICAgICAvLyBUT0RPIDogVG9hc3Qgd2Vic2l0ZSBvcGVuID8gb3IgV09LQSBCQU5ORVIgPyBvciBub3RpZmljYXRpb24gbW9kdWxlID8KICAgICAgY29uc29sZS5sb2codXRpbHMudHJhbnNsYXRpb25zLnRyYW5zbGF0ZSgnbW9kdWxlcy5sb2JieS5wbGF5ZXJJc05vdEF2YWlsYWJsZScpKQogICAgfQogIH0pCgogIC8vIENhbm5vdCBpbnZpdGUgcGxheWVyIGlmIGhlIGhhcyBhbHJlYWR5IGJlZW4gaW52aXRlZCBvciBoYXMgYWxyZWFkeSBpbnZpdGVkIHNvbWVvbmUKICBpZiAoIW1vZHVsZXMubG9iYnkuY2FuSW52aXRlUExheWVyKHBsYXllcikpIHsKICAgIGJ1dHRvbi5zZXRBdHRyaWJ1dGUoJ2Rpc2FibGVkJywgJ2Rpc2FibGVkJykKICB9CgogIGNoaWxkLmFwcGVuZENoaWxkKGltYWdlKQogIGNoaWxkLmFwcGVuZENoaWxkKG5hbWUpCiAgY2hpbGQuYXBwZW5kQ2hpbGQoYnV0dG9uKQoKICByZXR1cm4gY2hpbGQKfQoKLy8gQ2xvc2Ugd2Vic2l0ZQpjb25zdCBjbG9zZVBsYXllcnNMaXN0V2Vic2l0ZSA9ICgpID0+IHsKICBtb2R1bGVzLmxvYmJ5LmFza0ZvclBsYXllcnNMaXN0V2Vic2l0ZUNsb3NlKCkKfQoKZXhwb3J0IHsKICBnZW5lcmF0ZVBsYXllcnNMaXN0QnV0dG9ucywKICBnZXRQbGF5ZXJCdXR0b24sCiAgY2xvc2VQbGF5ZXJzTGlzdFdlYnNpdGUsCn0=')
+              const utils = await import('data:application/javascript;base64,ZXhwb3J0ICogYXMgbWFpbiBmcm9tICcuL21haW4uanMnCmV4cG9ydCAqIGFzIHRyYW5zbGF0aW9ucyBmcm9tICcuL3RyYW5zbGF0ZS5qcycKZXhwb3J0ICogYXMgbGF5ZXJzIGZyb20gJy4vbGF5ZXJzLmpzJwpleHBvcnQgKiBhcyBjaGF0IGZyb20gJy4vY2hhdC5qcyc=')
+
+              // Get HTML elements
+              const playerList = document.getElementById('playerList')
+              const closeButton = document.getElementById('close')
+
+              // Générer la liste des joueurs à proximité
+              if (playerList) {
+                playerList.innerText = utils.translations.translate('modules.lobby.playersList')
+                await generatePlayersListButtons(playerList)
+              }
+
+              // Bouton de fermeture
+              if (closeButton) {
+                closeButton.addEventListener("click", () => {
+                  closePlayersListWebsite()
+                })
+                closeButton.innerText = utils.translations.translate('modules.lobby.close')
+              }
+            })
+          })
+        </script>
+      <link rel="stylesheet" href="../../assets/main-461c278e.css">
+    </head>
+    <body>
+        <div class="bg-white p-2">
+            <div id="playerList">
+                Liste des joueurs autour de moi
+            </div>
+            <div>
+                <button class="btn bg-error mt-2 mb-2" id="close">
+                    FERMER
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

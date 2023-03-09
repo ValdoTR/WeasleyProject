@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Players list</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <meta name="title" content="Players list">
+
+        
+
+        <script src="https://play.workadventu.re/iframe_api.js"></script>
+        <script lang="ts">
+          window.addEventListener("DOMContentLoaded", () => {
+            WA.onInit().then(async () => {
+              const {
+                cancelInvitation
+              } = await import('data:video/mp2t;base64,Ly8vIDxyZWZlcmVuY2UgdHlwZXM9Ii4uLy4uL25vZGVfbW9kdWxlcy9Ad29ya2FkdmVudHVyZS9pZnJhbWUtYXBpLXR5cGluZ3MiIC8+CmltcG9ydCAqIGFzIG1vZHVsZXMgZnJvbSAnLi4vLi4vc3JjL21vZHVsZXMvaW5kZXguanMnCgpjb25zdCBjYW5jZWxJbnZpdGF0aW9uID0gKCkgPT4gewogIGNvbnNvbGUubG9nKCdtb2R1bGVzLmxvYmJ5LmFza2ZvcmNhbmNlbGludml0YXRpb24nKQogIG1vZHVsZXMubG9iYnkuYXNrRm9yQ2FuY2VsSW52aXRhdGlvbigpCn0KCmV4cG9ydCB7CiAgY2FuY2VsSW52aXRhdGlvbgp9')
+              const utils = await import('data:application/javascript;base64,ZXhwb3J0ICogYXMgbWFpbiBmcm9tICcuL21haW4uanMnCmV4cG9ydCAqIGFzIHRyYW5zbGF0aW9ucyBmcm9tICcuL3RyYW5zbGF0ZS5qcycKZXhwb3J0ICogYXMgbGF5ZXJzIGZyb20gJy4vbGF5ZXJzLmpzJwpleHBvcnQgKiBhcyBjaGF0IGZyb20gJy4vY2hhdC5qcyc=')
+
+              const cancelButton     = document.getElementById('cancelButton')
+              const waitingForAnswer = document.getElementById('waitingForAnswer')
+
+              cancelButton.innerText = utils.translations.translate('modules.lobby.cancel')
+              cancelButton.addEventListener("click", () => {
+                cancelInvitation()
+              })
+
+              waitingForAnswer.innerHTML = utils.translations.translate('modules.lobby.waitingForAnswer')
+            })
+          })
+        </script>
+      <link rel="stylesheet" href="../../assets/main-461c278e.css">
+    </head>
+    <body>
+        <div class="bg-white">
+            <div id="waitingForAnswer">
+                En attente de la réponse (TODO : translations)
+            </div>
+            <div>
+                <button id="cancelButton" class="btn bg-error">
+                    Annuler (TODO : Translations)
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
