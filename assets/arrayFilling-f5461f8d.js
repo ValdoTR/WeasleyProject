@@ -1,1 +1,0 @@
-const u=function*(e,t,a){let n=!1,i=[];for(;!n;){let s=yield,o=!1;i.push(s);for(let r=0;r<e.length;r++){let f=!0;for(let l=0;l<i.length;l++){if(e[r][l]===i[l]){l===e[r].length-1&&(n=!0,a());continue}f=!1;break}if(f){o=!0;break}}o||(i=[],t())}},g=(e,t,a,n)=>{window[`arrayFilling${e}`]=u(t,a,n)},c=(e,t)=>{window[`arrayFilling${e}`].next(t)};export{g as s,c as t};
